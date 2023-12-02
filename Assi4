@@ -1,0 +1,59 @@
+#Name:Rahane Priyanka Bharat
+#Batch : B3
+#Roll no : 47
+#Pract no.4:Generating the n gram model using nltk  
+
+
+from nltk import ngrams
+# Unigram model
+n = 1
+sentence = 'Javapoint is a recognised platform for online learning in India.'
+unigrams = ngrams(sentence.split(), n)
+print("Unigram:")
+for item in unigrams:
+print(item)
+# Bigram model
+n = 2
+sentence = 'Embrace the journey, cherish the moments.'
+bigrams = ngrams(sentence.split(), n)
+print("Bigram:")
+for item in bigrams:
+print(item)
+# Trigram model
+n = 3
+sentence = 'After 200 years, we will be in 21 century with year start 2000.'
+trigrams = ngrams(sentence.split(), n)
+print("Trigram:")
+for item in trigrams:
+print(item)
+
+# OUTPUT:
+# Unigram:
+# ('Javapoint',)
+# ('is',)
+# ('a',)
+# ('recognised',)
+# ('platform',)
+# ('for',)
+# ('online',)
+# ('learning',)
+# ('in',)
+# ('India.',)
+# Bigram:
+# ('Embrace', 'the')
+# ('the', 'journey,')
+# ('journey,', 'cherish')
+# ('cherish', 'the')
+# ('the', 'moments.')
+# Trigram:
+# ('After', '200', 'years,')
+# ('200', 'years,', 'we')
+# ('years,', 'we', 'will')
+# ('we', 'will', 'be')
+# ('will', 'be', 'in')
+# ('be', 'in', '21')
+# ('in', '21', 'century')
+# ('21', 'century', 'with')
+# ('century', 'with', 'year')
+# ('with', 'year', 'start')
+# ('year', 'start', '2000.')
