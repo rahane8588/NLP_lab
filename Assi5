@@ -1,0 +1,31 @@
+#Name : Rahane Priyanka Bharat
+#Batch : B3
+#Roll no : 47
+#Pract no 5 : Implement regular expression function to find URL, IP address, Date, PAN number in textual data using python libraries
+
+import re
+def find_entities(text):
+result = {
+'URLs': re.findall(r'https?://\S+|www\.\S+', text),
+'IP Addresses': re.findall(r'\b(?:\d{1,3}\.){3}\d{1,3}\b', text),
+'Dates': re.findall(r'([1-9]|[12][0-9]|3[01])\/(0[1-9]|1[1,2])\/(19|20)\d{2}', text),
+'PAN Numbers': re.findall(r'[A-Z]{5}[0-9]{4}[A-Z]', text),}
+return result
+# New input text
+new_text = """
+Check out our website: http://samplewebsite.com.
+Contact us via email at sample@example.com.
+IP address: 192.168.158.709
+Date: 4/12/2023
+PAN number: FMS6TSW """
+# Applying the find_entities function to the new text
+result = find_entities(new_text)
+# Displaying the extracted entities
+for entity_type, entities in result.items():
+print(f"{entity_type}: {entities}")
+
+# Ouput:
+# URLs: ['http://samplewebsite.com.']
+# IP Addresses: ['192.168.158.709']
+# Dates: [('4', '12', '20')]
+# PAN Numbers: ['FMS6TSW'] 
